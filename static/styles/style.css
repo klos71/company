@@ -1,0 +1,51 @@
+body {
+  background-color: whitesmoke;
+  color: #0c0c0c;
+}
+
+#search {
+  float: left;
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+#date {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#givers td {
+  font-size: 16px;
+}
+
+td {
+  padding: 8px;
+}
+
+#list {
+  align-self: auto;
+  min-width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#list td {
+  border: 1px solid black;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#list .key {
+  height: 50px;
+  font-size: 14px;
+  align-content: center;
+}
+#list .key-key {
+  width: 25%;
+}
+
+.key:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.key:nth-child(even) {
+  background: rgba(0, 0, 0, 0.05);
+}

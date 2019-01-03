@@ -1,12 +1,22 @@
-from flask import Flask
+from flask import Flask, render_template, request
+import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
+app.secret_key = 'super secret string'
 
+with open('config.json') as f:
+    data = json.load(f)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template("index.html")
 
 
-if __name__ == '__main__':
-    app.run()
+@app.route('/inventory')
+def inventory():
+    return render_template("inv.html")
+
+
+@app.context_processor
+def inject_Cname():
+    return dict(Cname=data["config"][0]["CompanyName"])
