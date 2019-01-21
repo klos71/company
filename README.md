@@ -1,5 +1,8 @@
 # Company
 
+## Contribution
+
+If you want to contribute to this project then please use the dev branch, create a new branch or fork this project
 
 ## Virtual Enviroment
 You should create and activate virtual environment:
