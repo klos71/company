@@ -2,8 +2,9 @@
 
 {% block content %}
     <table id="list">
-    <tr><th>Name</th><th>Amount</th></tr>
-    <tr class="key"><td>Burk</td><td>2</td></tr>
-    <tr class="key"><td>Burk2</td><td>2</td></tr>
+    <tr><th>Name</th><th>Amount</th><th>Price</th></tr>
+        {% for item in inv %}
+            <tr class="key"><td>{{ item.name }}</td><td>{{ item.qty }}</td><td>{{ item.price }}</td></tr>
+        {% endfor %}
     </table>
 {% endblock %}

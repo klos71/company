@@ -14,8 +14,9 @@
 <div class="w3-bar w3-green">
   <a href="/" class="w3-bar-item w3-button">{{ Cname }}</a>
   <a href="/inventory" class="w3-bar-item w3-button w3-hide-small">Inventory</a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small">Link 3</a>
+  <a href="/login" class="w3-bar-item w3-button w3-hide-small">Login</a>
+  <a href="/logout" class="w3-bar-item w3-button w3-hide-small">Logout</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small" style="float: right;">{{ current_user.id }}</a>
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
 </div>
 
