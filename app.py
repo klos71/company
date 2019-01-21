@@ -64,6 +64,18 @@ def hello_world():
     return render_template("index.html")
 
 
+@app.route('/item/<item>')
+@flask_login.login_required
+def showItem(item):
+    itemname = query_db("SELECT product_name,product_qty, product_price,ean FROM product WHERE product_name = ?",(item,))
+    prod = dict(name=str(str(itemname[0]).split(",")[0]).split("'")[1],qty=str(str(itemname[0]).split(",")[1]).split("'")[1],price=str(str(itemname[0]).split(",")[2]).split("'")[1],ean=str(str(itemname[0]).split(",")[3]).split("'")[1])
+    return render_template("item.html", Item=prod)
+
+@app.route('/search')
+@flask_login.login_required
+def search():
+    return render_template("search.html")
+
 @app.route('/inventory')
 @flask_login.login_required
 def inventory():
@@ -84,7 +96,6 @@ def login():
 
     email = request.form['email']
     temp = query_db('SELECT password FROM admin WHERE username = ?', [email], one=True)
-    print str(temp).split("'")[1]
 
     if str(temp).split("'")[1] == request.form['password']:
         user = User()
@@ -116,7 +127,7 @@ def add_prod():
 
 @login_manager.unauthorized_handler
 def unauthorized_handler():
-    return render_template("login.html")
+    return redirect(url_for('login'))
 
 @app.context_processor
 def inject_Cname():

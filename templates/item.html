@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="w3-bar w3-blue" style="width: 25%">
+        <a href="#" class="w3-bar-item w3-button" style="width: 33.3%">Update amount</a>
+        <a href="#" class="w3-bar-item w3-button" style="width: 33.3%">Update Price</a>
+        <a href="#" class="w3-bar-item w3-button" style="width: 33.3%">Remove Product</a>
+
+    </div>
+    <p>Name: {{ Item.name }}</p>
+    <p>Amount: {{ Item.qty }}</p>
+    <p>Price: {{ Item.price }}€</p>
+    <p>Ean: {{ Item.ean }}</p>
+
+{% endblock %}
