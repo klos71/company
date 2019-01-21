@@ -49,3 +49,9 @@ td {
 .key:nth-child(even) {
   background: rgba(0, 0, 0, 0.05);
 }
+.info-btn{
+  width: 20px;
+}
+.info-btn .btn{
+  width: 100%;
+}
