@@ -1,0 +1,12 @@
+html,
+body {
+  background-color: whitesmoke;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1px;
+}
+
+/*# sourceMappingURL=style.css.map */
